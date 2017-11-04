@@ -1,3 +1,170 @@
+
+body{
+	background-image: url("../images/millionaire01.jpg"); 
+	color: white;
+	text-align: center;
+}
+* {
+    box-sizing: border-box;
+}
+.row{
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/*Column sizes, grid system.*/
+.col-x5{width: 4.165%;}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-5x25 {width: 43.7525%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+/*  padding-top: 15px;
+    padding-bottom: 15px;
+*/}
+.container{
+	clear: both;
+	width: 100%;
+	height: 100%;
+	max-width: 960px;
+	min-height:750px ;
+	margin: 0 auto;
+	background-color: black;
+	overflow: auto;
+	border: 1px dashed #ddd;
+	margin-top: 50px;
+	padding: 15px;
+	position: relative;
+	opacity: 0.98;
+}
+
+header{
+	background-color: #0B3357;
+}
+h1{
+	font-weight: bold;
+	font-size: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 2px solid white;
+}
+#startDiv, .info{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%,-50%);
+	padding: 20px 40px 20px 40px;	
+	border: 2px solid white;
+	font-size: 25px;
+	cursor: pointer;
+}
+#startDiv:hover, .info:hover{
+	background-color: grey;
+}
+
+h2{
+	font-size: 50px;
+	font-weight: bold;
+}
+.timerContainer{
+	margin: 0 auto;
+	position: relative;
+	border-radius: 50%;
+	border: 5px solid white;
+	width: 200px;
+	height: 200px;
+	background: yellow; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left top, white, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, white, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, white, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, white, yellow); /* Standard syntax (must be last) */
+}
+#timerDiv{
+	color: black;
+	font-weight: bold;
+	font-size: 40px;
+	position: absolute;
+	top:50%; left: 50%;
+	transform: translate(-50%,-50%);
+}
 #orangeSelect{
 	background-color: #EF7D00;
+}
+#greenSelect{
+	background-color: #00AD53;
+}
+.questionBorder{
+	border: 2px solid #0067FE;
+}
+#questionDiv{
+	font-weight: bold;
+	font-size: 25px;
+	padding: 15px;
+}
+.answerDiv, .submitDiv{
+	height: 100%;
+    cursor: pointer; 
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #0067FE;
+    padding: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.answerDiv:hover{
+	background-color: #0067FE;
+	border-color: white;
+}
+.submitDiv:hover{
+	background-color: #0067FE;
+	border-color: white;
+	color: white;
+}
+.line{
+	min-height: 94px;
+}
+.separator{
+	border: 1px solid #0067FE;
+	margin-top: 32px;
+}
+.modal {
+    display: none;  /*Hidden by default*/ 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    /*padding-top: 100px;  Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	overflow:auto;
+    background-color: #D3D3D3;
+    margin: auto;
+    padding: 30px;
+    margin-top: 200px;
+    border: 1px solid #888;
+    max-width: 35%;
+    color: black;
+    font-size: 20px;
 }

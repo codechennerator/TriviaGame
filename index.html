@@ -2,60 +2,93 @@
 <html>
 <head>
 	<title>Trivia Game</title>
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class= "container start-screen">
-	<header>
-		<h1>Totally Trivial Trivia!</h1>
-	</header>
+		<header>
+			<h1>Computer Trivia</h1>
+		</header>
 		<div id = "startDiv">
 			<h2>Start</h2>
 		</div>
-	</div>
-	<div class = "container game-screen">
-		<div class = "row">
-			<header>
-				<h1>Totally Trivial Trivia!</h1>
-			</header>
-		</div>
 
+	</div>
+
+	<div class= "container end-screen">
+		<header>
+			<h1>Computer Trivia</h1>
+		</header>
+		<div id = "insertEnd" class = "info">
+			
+		</div>
+	</div>
+	
+
+	<div class = "container game-screen">
+		<header>
+			<h1>Computer Trivia</h1>
+		</header>
+		
 		<div class = "row">
 			<div class="timerContainer">
-				<h1 class="timer">
-				<!--Timer here -->
-				</h1>
+				<div id="timerDiv"> 
+				</div>
 			</div>
-		</div>
-
-		<div class="row">
 			<div class = "questionContainer">
 				<div class = "row">
-					<div class = "col-12">
+					<div class = "col-1 separator"></div>
+					<div class = "col-10 questionBorder">
 						<!--Question Here -->
 					</div>
+					<div class = "col-1 separator"></div>
 				</div>
-				<div class = "row">
-					<div class = "col-6 answerDiv">
+				<div class = "row line">
+					<div class="col-x5 separator"></div>
+					<div class = "col-5x25 answerDiv">
 						<!--Answer Here -->
 					</div>
-					<div class = "col-6 answerDiv">
+					<div class="col-x5 separator"></div>
+					<div class = "col-5x25 answerDiv">
 						<!--Answer Here -->
 					</div>
+					<div class="col-x5 separator"></div>
 				</div>
-				<div class = "row">
-					<div class = "col-6 answerDiv">
+				<div class = "row line">
+					<div class="col-x5 separator"></div>
+					<div class = "col-5x25 answerDiv">
 						<!--Answer Here -->
 					</div>
-					<div class = "col-6 answerDiv">
+					<div class="col-x5 separator"></div>
+					<div class = "col-5x25 answerDiv">
 						<!--Answer Here -->
 					</div>
+					<div class="col-x5 separator"></div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div id="getAnswer" class="modal">
+		 	<div class="modal-content">
+			    <h1>Final Answer?</h1>
+			    <div class="col-x5 separator"></div>
+				<div class = "col-5x25 submitDiv" id = "yes">
+					<div>Yes</div>
+				</div>
+				<div class="col-x5 separator"></div>
+				<div class = "col-5x25 submitDiv" id = "close">
+					<div class>Cancel</div>
+				</div>
+				<div class="col-x5 separator"></div>
+			      
+		 	</div>
+		</div>
+	</div>	
+
+	
+
+
 	<script type="text/javascript" src = "assets/javascript/app.js"></script>
 </body>
 </html>
