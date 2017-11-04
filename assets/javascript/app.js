@@ -1,8 +1,14 @@
+	/*Known bugs: 
+	- If timer hits 0 and Yes is clicked at the same time, the page glitches out.
+	- While the divs are being highlighted*/
+
+
 	var questions = [];
 	var gameLevelCounter = 1; 
 	const maxLevel = 7;  
 	var questionCounter = 0;
 	var answerSelected = false;
+	var finalSubmitted = false;
 	var displayedRandomQuest;
 	const timePerQuest = 30;
 	var timer = timePerQuest;
@@ -126,7 +132,8 @@
 	}
 
 	function emptyBoard(){
-		answerSelected = false;		
+		answerSelected = false;
+		finalSubmitted = false;		
 		$('#greenSelect').removeAttr('id');
 		$('#orangeSelect').removeAttr('id');
 		$('.questionContainer').children('.row').children('.col-10').empty();
@@ -246,23 +253,25 @@
 	
 /*------------------------------------Step 2 Called Below --------------------------------*/ 
 	$('.answerDiv').click(function(){
-		if(answerSelected == false){
-			$(this).attr('id','orangeSelect');
-			answerSelected = true;
-		}else{
-			$('.answerDiv').each(function(){
-				$(this).removeAttr('id');
-			});
-			$(this).attr('id','orangeSelect');
-		}
-	
-		setTimeout(function(){
-			$('#getAnswer').css('display','block'); //Opens the getAnswer modal. If they click yes, submit answer.
-		}, 150);
+		if(!finalSubmitted){
+			if(answerSelected == false){
+				$(this).attr('id','orangeSelect');
+				answerSelected = true;
+			}else{
+				$('.answerDiv').each(function(){
+					$(this).removeAttr('id');
+				});
+				$(this).attr('id','orangeSelect');
+			}
 		
+			setTimeout(function(){
+				$('#getAnswer').css('display','block'); //Opens the getAnswer modal. If they click yes, submit answer.
+			}, 150);
+		}
 	});
 	/*-------------------Step 2A: When an answer is selected, get answer. -------*/
 	$('#yes').click(function(){
+		finalSubmitted = true;
 		stop();
 		submit();
 		$('#getAnswer').css('display','none');
